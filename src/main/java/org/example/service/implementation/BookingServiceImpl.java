@@ -8,6 +8,7 @@ import org.example.service.BookingService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Scanner;
 
 import static java.lang.Math.abs;
@@ -78,7 +79,7 @@ public class BookingServiceImpl implements BookingService {
             bookingRepository.newBooking(booking);
 
         }
-    };
+    }
     @Override
     public void displayTaxiDetails(){bookingRepository.display();
     }
@@ -110,11 +111,9 @@ public class BookingServiceImpl implements BookingService {
             }
             else if(reachDistance == min)
             {
-                assert bestTaxi != null;
-                if(taxi.getEarnings() < bestTaxi.getEarnings())
-                {
+                if(Objects.nonNull(bestTaxi) && (taxi.getEarnings() < bestTaxi.getEarnings()))
                     bestTaxi = taxi;
-                }
+
             }
         }
         return bestTaxi;

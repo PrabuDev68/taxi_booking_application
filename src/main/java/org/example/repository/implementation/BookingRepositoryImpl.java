@@ -53,9 +53,7 @@ public class BookingRepositoryImpl implements BookingRepository {
                     }
                 }
             }
-            System.out.println();
-            System.out.println("---------------------------------------------------------------------------------------------------");
-            System.out.println();
+            printBorder();
         }
     }
     @Override
@@ -68,6 +66,13 @@ public class BookingRepositoryImpl implements BookingRepository {
     public void newBooking(Booking booking)
     {
         bookings.add(booking);
+    }
+
+    private static void printBorder()
+    {
+        System.out.println();
+        System.out.println("---------------------------------------------------------------------------------------------------");
+        System.out.println();
     }
 
 
